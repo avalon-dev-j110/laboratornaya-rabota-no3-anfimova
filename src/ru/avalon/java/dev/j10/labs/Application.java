@@ -1,9 +1,26 @@
 package ru.avalon.java.dev.j10.labs;
 
-public class Application {
+import ru.avalon.java.dev.j10.labs.initialization.FibonacciInitializer;
+import ru.avalon.java.dev.j10.labs.initialization.RandomInitializer;
+import ru.avalon.java.dev.j10.labs.sort.BubbleSort;
 
-    public static void main(String[] args) {
-        int[] array;
+public class Application{
+
+    public static void main(String[] args){
+
+    	int[] array = new int[20];
+
+		FibonacciInitializer fibonacci = new FibonacciInitializer(array);
+		fibonacci.initialize(array);
+		fibonacci.print(array);
+		System.out.println(sumArray(array));
+
+		RandomInitializer random = new RandomInitializer(array, -50, 50);
+		random.initialize(array);
+		random.print(array);
+
+
+
 
 	    /*
 	     * TODO(Студент): Выполнить действия над массивом чисел
@@ -34,4 +51,13 @@ public class Application {
          *    сортировки Шелла.
 	     */
     }
+
+    public static int sumArray(int[] array) {
+    	int sum = 0;
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+    	return sum;
+	}
+
 }

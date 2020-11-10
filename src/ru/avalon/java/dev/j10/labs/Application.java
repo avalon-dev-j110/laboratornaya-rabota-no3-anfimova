@@ -3,6 +3,8 @@ package ru.avalon.java.dev.j10.labs;
 import ru.avalon.java.dev.j10.labs.initialization.FibonacciInitializer;
 import ru.avalon.java.dev.j10.labs.initialization.RandomInitializer;
 import ru.avalon.java.dev.j10.labs.sort.BubbleSort;
+import ru.avalon.java.dev.j10.labs.sort.SelectionSort;
+import ru.avalon.java.dev.j10.labs.sort.ShellSort;
 
 public class Application{
 
@@ -19,8 +21,20 @@ public class Application{
 		random.initialize(array);
 		random.print(array);
 
+		int[] bubble = random.getRandom();
+		BubbleSort bubbleSort = new BubbleSort(bubble);
+		bubbleSort.sort(bubble);
+		bubbleSort.print(bubble);
 
+		int[] selection = random.getRandom();
+		SelectionSort selectionSort = new SelectionSort(selection);
+		selectionSort.sort(selection);
+		selectionSort.print(selection);
 
+		int[] shell = random.getRandom();
+		ShellSort shellSort = new ShellSort(shell);
+		shellSort.sort(shell);
+		shellSort.print(shell);
 
 	    /*
 	     * TODO(Студент): Выполнить действия над массивом чисел

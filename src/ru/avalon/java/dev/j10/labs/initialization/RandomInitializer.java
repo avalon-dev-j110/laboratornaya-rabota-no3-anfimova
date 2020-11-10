@@ -39,6 +39,10 @@ public class RandomInitializer implements Initializer {
         return random;
     }
 
+    public void setRandom(int[] random) {
+        this.random = random;
+    }
+
     @Override
     public void initialize(int[] array) {
         Random random = new Random();
